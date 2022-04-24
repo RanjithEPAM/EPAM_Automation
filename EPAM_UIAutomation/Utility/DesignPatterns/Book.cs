@@ -8,6 +8,7 @@ namespace EPAMTraining.Utility.DesignPatterns
 {
     public class Book
     {
+        /*
         static void Main(string[] args)
         {
             Library book = Library.GetInstance();
@@ -24,5 +25,6 @@ namespace EPAMTraining.Utility.DesignPatterns
 
             Console.ReadLine();
         }
+        */
     }
 }

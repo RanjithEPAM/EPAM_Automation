@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace EPAMTraining.Features
+namespace EPAM_UIAutomation.Features
 {
     using TechTalk.SpecFlow;
     using System;

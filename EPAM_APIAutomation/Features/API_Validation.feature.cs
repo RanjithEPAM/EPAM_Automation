@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace APIAutomationTests.Features
+namespace EPAM_APIAutomation.Features
 {
     using TechTalk.SpecFlow;
     using System;
