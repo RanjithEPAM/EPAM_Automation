@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32328.378
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EPAM_UIAutomation", "EPAM_UIAutomation\EPAM_UIAutomation.csproj", "{BF66DAD1-268D-498A-9C82-E196D009AADE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EPAM_APIAutomation", "EPAM_APIAutomation\EPAM_APIAutomation.csproj", "{E1D2BE46-62B2-407B-A40A-D9E0B409071C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BF66DAD1-268D-498A-9C82-E196D009AADE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF66DAD1-268D-498A-9C82-E196D009AADE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF66DAD1-268D-498A-9C82-E196D009AADE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF66DAD1-268D-498A-9C82-E196D009AADE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1D2BE46-62B2-407B-A40A-D9E0B409071C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1D2BE46-62B2-407B-A40A-D9E0B409071C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1D2BE46-62B2-407B-A40A-D9E0B409071C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1D2BE46-62B2-407B-A40A-D9E0B409071C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9C25CDE6-7E67-472F-B8C4-4C6697BB7905}
+	EndGlobalSection
+EndGlobal

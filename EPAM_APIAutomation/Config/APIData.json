@@ -1,0 +1,16 @@
+{
+  "APIData": [
+    {
+      "key": "BaseUrl",
+      "value": "https://reqres.in/"
+    },
+    {
+      "key": "GETAPI",
+      "value": "/api/users?page=2"
+    },
+    {
+      "key": "POSTAPI",
+      "value": "/api/users"
+    }
+  ]
+}
