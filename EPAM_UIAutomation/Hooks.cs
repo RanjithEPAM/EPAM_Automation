@@ -25,13 +25,6 @@ namespace EPAMTraining
 
         public  static string repoPath;
         public static dynamic jsonFile;
-        /*
-        static string reportpath = @System.IO.Directory.GetParent(@"../../../").FullName
-            + Path.DirectorySeparatorChar + "Result"
-        // + Path.DirectorySeparatorChar + "Result_" + DateTime.Now.ToString("ddMMyyyy_HHmmss") + ".html";
-        + Path.DirectorySeparatorChar + "Result_1.html";
-        */
-
 
         public static DriverManager drivermanager;
         public static IWebDriver driver;
@@ -51,8 +44,6 @@ namespace EPAMTraining
         [BeforeTestRun]
         public static void InitializeReport()
         {
-            //ReadJsonFile(@"C:\Users\Ranjith_Paramasivam\source\repos\EPAMTraining\Config.Json");
-           // string repoPath = ConfigurationManager.AppSettings["reportpath"];
             ExtentHtmlReporter htmlReport = new ExtentHtmlReporter(repoPath);
             extent = new AventStack.ExtentReports.ExtentReports();
             extent.AttachReporter(htmlReport);
@@ -94,7 +85,6 @@ namespace EPAMTraining
             step.Log(Status.Info, "Step initiated");
         }
 
-
         public static void ReadJsonFile(string jsonFileIn)
         {
             jsonFile = JsonConvert.DeserializeObject(File.ReadAllText(jsonFileIn));
@@ -108,7 +98,6 @@ namespace EPAMTraining
             {
                 string json = r.ReadToEnd();
                 List<Item> items = JsonConvert.DeserializeObject<List<Item>>(json);
-                //repoPath= items.
             }
         }
     }

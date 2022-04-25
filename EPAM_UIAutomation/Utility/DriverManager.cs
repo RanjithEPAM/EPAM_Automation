@@ -10,8 +10,6 @@ namespace EPAMTraining.Utility
     public abstract class DriverManager
     {
         protected IWebDriver driver;
-        protected abstract void startService();
-        protected abstract void stopService();
         protected abstract IWebDriver createdriver();
 
         public void quitdriver()
@@ -27,12 +25,9 @@ namespace EPAMTraining.Utility
         {
             if(driver == null)
             {
-                startService();
                 driver = createdriver();
             }
             return driver;
         }
-
-
     }
 }

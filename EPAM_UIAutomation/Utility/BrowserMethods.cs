@@ -11,15 +11,12 @@ namespace EPAMTraining
     public class BrowserMethods
     {
         public static IWebDriver Driver;
-        
         public BrowserMethods(IWebDriver driver)
         {
             Driver = driver;
         }
-
         public IWebDriver NavigateToGivenURL(string url)
         {
-
             Driver.Navigate().GoToUrl(url);
             return Driver;
         }
@@ -28,7 +25,6 @@ namespace EPAMTraining
             IJavaScriptExecutor js = (IJavaScriptExecutor)Driver;
             js.ExecuteScript("window.scrollBy(0,250)", "");
         }
-
         public static void ActionMoveToElement(IWebElement element)
         {
             Actions actions = new Actions(Driver);
@@ -38,11 +34,7 @@ namespace EPAMTraining
         public void roughmethod()
         {
             WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(30));
-            
-        }
-        public void capturescreenshot()
-        {
-            
+
         }
 
         public string Gettimestamp(DateTime value)

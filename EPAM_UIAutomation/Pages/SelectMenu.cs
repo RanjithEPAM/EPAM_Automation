@@ -13,7 +13,6 @@ namespace Exercise_Epam.POM
     class SelectMenu
     {
         IWebDriver driver;
-        
         public SelectMenu(IWebDriver driver)
         {
             this.driver = driver;
@@ -21,7 +20,6 @@ namespace Exercise_Epam.POM
 
         Helper helper = new Helper();
         private IWebElement Widget => driver.FindElement(By.XPath("//*[text() ='Widgets']"));
-
         private IWebElement SelMenu => driver.FindElement(By.XPath("//*[@class='text' and text() = 'Select Menu']"));
         private IWebElement Interactions => driver.FindElement(By.XPath("//*[text() ='Interactions']"));
         private IWebElement SelDropDownOld => driver.FindElement(By.XPath("//*[@id='oldSelectMenu']"));
@@ -29,7 +27,6 @@ namespace Exercise_Epam.POM
 
         public void NavigateToSelectMenu()
         {
-
             BrowserMethods.ActionMoveToElement(Interactions);
             helper.clickbutton(Widget);
             Thread.Sleep(3000);

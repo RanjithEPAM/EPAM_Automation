@@ -21,17 +21,5 @@ namespace EPAMTraining.Utility
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             return driver;
         }
-
-        protected override void startService()
-        {
-            //This is dummy function
-            Console.WriteLine("Testing - StartService");
-        }
-
-        protected override void stopService()
-        {
-            //This is dummy function
-            Console.WriteLine("Testing - StopService");
-        }
     }
 }

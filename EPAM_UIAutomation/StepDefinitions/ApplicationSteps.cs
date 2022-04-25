@@ -106,6 +106,5 @@ namespace Exercise_Epam
         {
             elem.CaptureAllLinks();
         }
-
     }
 }

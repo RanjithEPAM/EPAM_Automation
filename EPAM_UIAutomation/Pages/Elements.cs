@@ -58,9 +58,7 @@ namespace EPAMTraining.POM
             helper.EnterGivenText(UserEmail, email);
             helper.EnterGivenText(CurrentAddress, currAddress);
             helper.EnterGivenText(PermanentAddress, PermAddress);
-            //BrowserMethods.switchToFrame();
             helper.clickbutton(Adclose);
-            //BrowserMethods.ActionMoveToElement(SubmitButton);
             BrowserMethods.Scroll();
             helper.clickbutton(SubmitButton);
         }
