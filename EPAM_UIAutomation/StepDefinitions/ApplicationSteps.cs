@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
+using static EPAMTraining.Hooks;
 
 namespace Exercise_Epam
 {
@@ -32,7 +33,7 @@ namespace Exercise_Epam
         public void GivenILaunchTheToolsQAUrl()
         {
             mds = new BrowserMethods(driver);
-            driver = mds.NavigateToGivenURL("https://demoqa.com/");
+            driver = mds.NavigateToGivenURL(url);
             homepage = new HomePage(driver);
             elem = new Elements(driver);
         }

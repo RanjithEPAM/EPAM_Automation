@@ -6,15 +6,14 @@ using System.Threading.Tasks;
 
 namespace EPAMTraining.Utility
 {
-    internal class ConfigClass
+    public class ConfigClass
     {
-       
-
         public class Item
         {
             public string URL;
             public string ReportPath;
             public string ReportName;
+            public string Browser;
         }
     }
 }

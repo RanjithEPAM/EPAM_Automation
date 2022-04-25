@@ -9,17 +9,17 @@ namespace EPAMTraining.Utility
 {
     public class DriverManagerFactory
     {
-        public static DriverManager getManager(DriverType type)
+        public static DriverManager getManager(string browser)
         {
             DriverManager driverManager = null;
 
-            switch (type)
+            switch (browser)
             {
-                case DriverType.CHROME:
+                case "CHROME":
                     driverManager = new ChromeDriverManager();
                     break;
 
-                case DriverType.IE:
+                case "IE":
                     //driverManager = new InternetExplorerDriver();
                     break;
 

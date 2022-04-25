@@ -19,10 +19,12 @@ namespace APIAutomationTests.StepDefinitions
     [Binding]
     public class API_Steps
     {
-        private string GetEndpoint = "https://reqres.in/api/users?page=2";
+        
+        public string GetEndpoint = "https://reqres.in/api/users?page=2";
         private string PostEndpoint = "https://reqres.in/api/users";
         private string PutEndpoint = "https://reqres.in/api/users";
         private string DeleteEndpoint = "https://reqres.in/api/users/2";
+        
 
         HttpClient httpClient = new HttpClient();
         HttpResponseMessage httpResponseMessage = new HttpResponseMessage();

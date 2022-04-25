@@ -24,15 +24,18 @@ namespace EPAMTraining
         private static ExtentTest step;
 
         public  static string repoPath;
+        public static string url;
+        public static string browserType;
         public static dynamic jsonFile;
 
         public static DriverManager drivermanager;
         public static IWebDriver driver;
+        
 
         [AfterScenario]
         public void AfterScenario()
         {
-           // drivermanager.quitdriver();
+           drivermanager.quitdriver();
         }
 
         [AfterFeature]
@@ -44,10 +47,13 @@ namespace EPAMTraining
         [BeforeTestRun]
         public static void InitializeReport()
         {
+            Hooks.LoadJson();
             ExtentHtmlReporter htmlReport = new ExtentHtmlReporter(repoPath);
+            htmlReport.Config.DocumentTitle = "Report001.html";
             extent = new AventStack.ExtentReports.ExtentReports();
+            
             extent.AttachReporter(htmlReport);
-            drivermanager = DriverManagerFactory.getManager(DriverType.CHROME);
+            drivermanager = DriverManagerFactory.getManager(browserType);
         }
 
         [BeforeFeature]
@@ -76,6 +82,7 @@ namespace EPAMTraining
             if (context.TestError == null)
             {
                 step.Log(Status.Pass, context.StepContext.StepInfo.Text);
+                step.Log(Status.Pass, repoPath);
             }
             else if (context.TestError != null)
 
@@ -92,13 +99,17 @@ namespace EPAMTraining
             Console.WriteLine($"Today's Video is: {jsonFile["ReportPath"]}");
         }
 
-        public void LoadJson()
+        public static void LoadJson()
         {
-            using (StreamReader r = new StreamReader(@"C:\Users\Ranjith_Paramasivam\source\repos\EPAMTraining\Utility\Config.json"))
+            using (StreamReader r = new StreamReader(@"C:\Users\Ranjith_Paramasivam\source\repos\EPAM_Automation\EPAM_UIAutomation\EPAM_UIAutomation\Utility\Config.json"))
             {
                 string json = r.ReadToEnd();
-                List<Item> items = JsonConvert.DeserializeObject<List<Item>>(json);
+                Item items = JsonConvert.DeserializeObject<Item>(json);
+                repoPath = items.ReportPath;
+                browserType = items.Browser;
+                url = items.URL;
             }
         }
+        
     }
 }

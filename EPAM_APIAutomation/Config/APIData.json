@@ -1,16 +1,7 @@
 {
-  "APIData": [
-    {
-      "key": "BaseUrl",
-      "value": "https://reqres.in/"
-    },
-    {
-      "key": "GETAPI",
-      "value": "/api/users?page=2"
-    },
-    {
-      "key": "POSTAPI",
-      "value": "/api/users"
-    }
-  ]
+  "GET": "https://reqres.in/api/users?page=2",
+  "POST": "https://reqres.in/api/users",
+  "PUT": "https://reqres.in/api/users",
+  "DELETE": "https://reqres.in/api/users/2",
+  "ReportPath": "C:\\Users\\Ranjith_Paramasivam\\source\\repos\\EPAM_Automation\\EPAM_UIAutomation\\EPAM_UIAutomation\\Result\\Report.html"
 }

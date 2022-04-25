@@ -1,5 +1,7 @@
-﻿using AventStack.ExtentReports;
+﻿using APIAutomationTests.Config;
+using AventStack.ExtentReports;
 using AventStack.ExtentReports.Reporter;
+using Newtonsoft.Json;
 using System;
 using System.IO;
 using TechTalk.SpecFlow;
@@ -15,10 +17,8 @@ namespace APIAutomationTests
         private static ExtentTest step;
 
 
-        static string reportpath = @System.IO.Directory.GetParent(@"../../../").FullName
-            + Path.DirectorySeparatorChar + "Result"
-         + Path.DirectorySeparatorChar + "Result_" + DateTime.Now.ToString("ddMMyyyy_HHmmss") + ".html";
-        //+ Path.DirectorySeparatorChar + "Result_1.html";
+        public static string reportpath;
+       
 
         [AfterScenario]
         public void AfterScenario()
@@ -77,5 +77,14 @@ namespace APIAutomationTests
             step.Log(Status.Info, "Step initiated");
         }
 
+        public static void LoadJson()
+        {
+            using (StreamReader r = new StreamReader(@"C:\Users\Ranjith_Paramasivam\source\repos\EPAM_Automation\EPAM_UIAutomation\EPAM_UIAutomation\Utility\Config.json"))
+            {
+                string json = r.ReadToEnd();
+                APIData items = JsonConvert.DeserializeObject<APIData>(json);
+                reportpath = items.ReportPath;
+            }
+        }
     }
 }

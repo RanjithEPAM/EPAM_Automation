@@ -1,9 +1,6 @@
 ﻿{
-  "DataCo": [
-    {
-      "url": "https://demoqa.com/",
-      "ReportName": "Report.html",
-      "ReportPath": @"C:\Users\Ranjith_Paramasivam\source\repos\EPAMTraining\Result\"
-    }
-  ]
+  "URL": "https://demoqa.com/",
+  "ReportName": "Report.html",
+  "ReportPath": "C:\\Users\\Ranjith_Paramasivam\\source\\repos\\EPAM_Automation\\EPAM_UIAutomation\\EPAM_UIAutomation\\Result\\Report.html",
+  "Browser": "CHROME"
 }
