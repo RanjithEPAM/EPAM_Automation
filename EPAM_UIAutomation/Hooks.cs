@@ -19,6 +19,7 @@ namespace EPAMTraining
     public sealed class Hooks
     {
         static AventStack.ExtentReports.ExtentReports extent;
+        [ThreadStatic]
         static AventStack.ExtentReports.ExtentTest feature;
         static AventStack.ExtentReports.ExtentTest scenario;
         private static ExtentTest step;
@@ -82,14 +83,13 @@ namespace EPAMTraining
             if (context.TestError == null)
             {
                 step.Log(Status.Pass, context.StepContext.StepInfo.Text);
-                step.Log(Status.Pass, repoPath);
             }
             else if (context.TestError != null)
 
             {
-                step.Log(Status.Fail, context.StepContext.StepInfo.Text);
+                var MediaEntity = CaptureScreenshotReturnModel(context.StepContext.StepInfo.Text);
+                step.Log(Status.Fail, context.StepContext.StepInfo.Text, MediaEntity);
             }
-            step.Log(Status.Info, "Step initiated");
         }
 
         public static void ReadJsonFile(string jsonFileIn)
@@ -110,6 +110,14 @@ namespace EPAMTraining
                 url = items.URL;
             }
         }
+
+        public MediaEntityModelProvider CaptureScreenshotReturnModel(string Name)
+        {
+            var screenshot = ((ITakesScreenshot)driver).GetScreenshot().AsBase64EncodedString;
+            return MediaEntityBuilder.CreateScreenCaptureFromBase64String(screenshot,Name).Build();
+
+        }
+
         
     }
 }

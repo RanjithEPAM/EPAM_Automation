@@ -3,7 +3,9 @@ using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Exercise_Epam.Utility
@@ -72,6 +74,50 @@ namespace Exercise_Epam.Utility
         {
             string ss = element.Text;
             Assert.IsTrue(ss.Contains(text));
+        }
+
+
+        public void LinqExample()
+        {
+            List<string> names = new List<string>(){ "Training", "Exercise", "Learning", "Coaching"};
+            Console.WriteLine("LINQ Example Start");
+            IEnumerable result1 = names.Where(x => x.Contains("a")).Select(x => x);
+            foreach (string item in result1)
+            {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine("\n");
+            Console.WriteLine("LINQ Sorting");
+
+            IEnumerable aresult1 = names.OrderBy(x => x);
+            foreach (string item in aresult1)
+            {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine("LINQ Example END");
+        }
+
+
+        public delegate void addnum(int a, int b);
+        public delegate void subnum(int a, int b);
+
+        public void sum(int a, int b)
+        {
+            Console.WriteLine("(100 + 40) = {0}", a + b);
+        }
+
+        public void subtract(int a, int b)
+        {
+            Console.WriteLine("(100 - 60) = {0}", a - b);
+        }
+
+        public void DelegateExample()
+        {
+            Helper obj = new Helper();
+            addnum del_obj1 = new addnum(obj.sum);
+            subnum del_obj2 = new subnum(obj.subtract);
+            del_obj1(100, 40);
+            del_obj2(100, 60);
         }
     }
 }

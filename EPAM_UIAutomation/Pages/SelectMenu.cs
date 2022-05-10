@@ -41,8 +41,8 @@ namespace Exercise_Epam.POM
 
         public void SelectValueFromSelectMenu()
         {
-            helper.selectDropDown(SelDropDownOld, "Black");
             helper.selectDropDown(StandardDropDown, 3);
+            helper.selectDropDown(SelDropDownOld, "sBlack");
         }
     }
 }

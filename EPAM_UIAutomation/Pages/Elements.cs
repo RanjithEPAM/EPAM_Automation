@@ -87,6 +87,8 @@ namespace EPAMTraining.POM
             {
                 Console.WriteLine("link - "+ link.GetAttribute("href"));
             }
+            helper.LinqExample();
+            helper.DelegateExample();
         }
     }
 }

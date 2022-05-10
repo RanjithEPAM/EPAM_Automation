@@ -17,8 +17,9 @@ namespace Exercise_Epam
     [Binding]
     public class ApplicationSteps
     {
-        public BrowserMethods mds;
+        [ThreadStatic]
         public IWebDriver driver;
+        public BrowserMethods mds;
         HomePage homepage;
         SelectMenu selectMenu;
         Elements elem;
