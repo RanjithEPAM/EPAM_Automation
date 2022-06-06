@@ -22,7 +22,7 @@ namespace Exercise_Epam
         public BrowserMethods mds;
         HomePage homepage;
         SelectMenu selectMenu;
-        Elements elem;
+        Elements elementsObj;
         private readonly ScenarioContext _scenarioContext;
         public ApplicationSteps(ScenarioContext scenarioContext)
         {
@@ -36,7 +36,7 @@ namespace Exercise_Epam
             mds = new BrowserMethods(driver);
             driver = mds.NavigateToGivenURL(url);
             homepage = new HomePage(driver);
-            elem = new Elements(driver);
+            elementsObj = new Elements(driver);
         }
 
         [When(@"I select Elements option")]
@@ -49,8 +49,8 @@ namespace Exercise_Epam
         [Then(@"Elements page is displayed")]
         public void ThenElementsPageIsDisplayed()
         {
-            elem = new Elements(driver);
-            elem.VerifyElementHeader();
+            elementsObj = new Elements(driver);
+            elementsObj.VerifyElementHeader();
         }
 
         [When(@"Navigating to Select Menu screen")]
@@ -58,7 +58,7 @@ namespace Exercise_Epam
         {
             BrowserMethods.Scroll();
             selectMenu = new SelectMenu(driver);
-            elem.CloseAds();
+            elementsObj.CloseAds();
             BrowserMethods.Scroll();
             selectMenu.NavigateToSelectMenu();
         }
@@ -73,17 +73,17 @@ namespace Exercise_Epam
         [When(@"I navigate to Registration screen")]
         public void WhenINavigateToRegistrationScreen()
         {
-            elem = new Elements(driver);
+            elementsObj = new Elements(driver);
             BrowserMethods.Scroll();
             homepage.ElementsOpt();
-            elem.NavigateToRegisterScreen();
+            elementsObj.NavigateToRegisterScreen();
         }
 
         [When(@"the user details are submitted as")]
         public void WhenTheUserDetailsAreSubmittedAs(Table table)
         {
             var inputdata = table.CreateInstance<RegistrationTable>();
-            elem.EnterRegistrationDetails(inputdata.Name, inputdata.Email, inputdata.CurrentAddress, inputdata.PermanentAddress);
+            elementsObj.EnterRegistrationDetails(inputdata.Name, inputdata.Email, inputdata.CurrentAddress, inputdata.PermanentAddress);
             _scenarioContext["Name1"] = inputdata.Name;
             _scenarioContext["Email"] = inputdata.Email;
             _scenarioContext["CurrentAddress"] = inputdata.CurrentAddress;
@@ -94,19 +94,19 @@ namespace Exercise_Epam
         public void ThenTheSubmittedDetailsShouldBeDisplayedInTheSameScreen()
         {
             BrowserMethods.Scroll();
-            elem.VerifyRegisteredSection();
+            elementsObj.VerifyRegisteredSection();
             string Name = _scenarioContext["Name1"].ToString();
             string Email = _scenarioContext["Email"].ToString();
             string CurrentAddress = _scenarioContext["CurrentAddress"].ToString();
             string PermanentAddress = _scenarioContext["PermanentAddress"].ToString();
 
-            elem.VerifySubmittedData(Name, Email, CurrentAddress, PermanentAddress);
+            elementsObj.VerifySubmittedData(Name, Email, CurrentAddress, PermanentAddress);
         }
 
         [Then(@"able to collect all links in webpage")]
         public void ThenAbleToCollectAllLinksInWebpage()
         {
-            elem.CaptureAllLinks();
+            elementsObj.CaptureAllLinks();
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium.IE;
+﻿using EPAM_UIAutomation.Utility;
+using OpenQA.Selenium.IE;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,12 +20,12 @@ namespace EPAMTraining.Utility
                     driverManager = new ChromeDriverManager();
                     break;
 
-                case "IE":
-                    //driverManager = new InternetExplorerDriver();
+                case "EDGE":
+                    driverManager = new EdgeDriverManager();
                     break;
 
-                default:
-                    driverManager = null;
+                case "Firefox":
+                    driverManager = new FirefoxDriverManager();
                     break;
             }
             return driverManager;

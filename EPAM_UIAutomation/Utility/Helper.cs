@@ -76,7 +76,6 @@ namespace Exercise_Epam.Utility
             Assert.IsTrue(ss.Contains(text));
         }
 
-
         public void LinqExample()
         {
             List<string> names = new List<string>(){ "Training", "Exercise", "Learning", "Coaching"};
@@ -96,7 +95,6 @@ namespace Exercise_Epam.Utility
             }
             Console.WriteLine("LINQ Example END");
         }
-
 
         public delegate void addnum(int a, int b);
         public delegate void subnum(int a, int b);

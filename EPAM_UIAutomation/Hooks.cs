@@ -85,11 +85,15 @@ namespace EPAMTraining
                 step.Log(Status.Pass, context.StepContext.StepInfo.Text);
             }
             else if (context.TestError != null)
-
             {
                 var MediaEntity = CaptureScreenshotReturnModel(context.StepContext.StepInfo.Text);
                 step.Log(Status.Fail, context.StepContext.StepInfo.Text, MediaEntity);
             }
+        }
+
+        public void ReportLogs( string Description)
+        {
+            step.Log(Status.Pass, Description);
         }
 
         public static void ReadJsonFile(string jsonFileIn)
@@ -117,7 +121,5 @@ namespace EPAMTraining
             return MediaEntityBuilder.CreateScreenCaptureFromBase64String(screenshot,Name).Build();
 
         }
-
-        
     }
 }

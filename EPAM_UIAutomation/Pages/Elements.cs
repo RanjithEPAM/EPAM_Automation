@@ -13,6 +13,7 @@ namespace EPAMTraining.POM
     public class Elements
     {
         IWebDriver driver;
+        Hooks Hooks = new Hooks();
         public Elements(IWebDriver driver) 
         {
             this.driver = driver;
@@ -22,10 +23,6 @@ namespace EPAMTraining.POM
         private IWebElement ElementsHeader => driver.FindElement(By.XPath("//*[@class='main-header' and text()='Elements']"));
 
         public IWebElement TextBoxButton => driver.FindElement(By.XPath("//span[@class='text' and text()='Text Box']"));
-
-        public IWebElement UserName => driver.FindElement(By.XPath("//input[@id='userName']"));
-
-        public IWebElement UserEmail => driver.FindElement(By.XPath("//input[@id='userEmail']"));
 
         public IWebElement CurrentAddress => driver.FindElement(By.XPath("//textarea[@id='currentAddress']"));
 
@@ -37,10 +34,9 @@ namespace EPAMTraining.POM
 
         public IWebElement Adclose => driver.FindElement(By.XPath("//*[@id='close-fixedban']"));
 
-        public IWebElement Disp_UserName => driver.FindElement(By.XPath("//p[@id='name']"));
-        public IWebElement Disp_UserEmail => driver.FindElement(By.XPath("//p[@id='email']"));
-        public IWebElement Disp_CurrentAddress => driver.FindElement(By.XPath("//p[@id='currentAddress']"));
-        public IWebElement Disp_PermanentAddress => driver.FindElement(By.XPath("//p[@id='permanentAddress']"));
+        public IWebElement Enter_UserDetails(string val) => driver.FindElement(By.XPath($"//input[@id='{val}']"));
+        
+        public IWebElement Disp_UserDetails(string address) => driver.FindElement(By.XPath($"//p[@id='{address}']"));
 
         public void VerifyElementHeader()
         {
@@ -50,17 +46,23 @@ namespace EPAMTraining.POM
         public void NavigateToRegisterScreen()
         {
             helper.clickbutton(TextBoxButton);
+            Hooks.ReportLogs("Navigated to Register Screen");
         }
 
         public void EnterRegistrationDetails(string user, string email, string currAddress, string PermAddress)
         {
-            helper.EnterGivenText(UserName, user);
-            helper.EnterGivenText(UserEmail, email);
+            helper.EnterGivenText(Enter_UserDetails("userName"), user);
+            Hooks.ReportLogs("Entered Username");
+            helper.EnterGivenText(Enter_UserDetails("userEmail"), email);
+            Hooks.ReportLogs("Entered email");
             helper.EnterGivenText(CurrentAddress, currAddress);
+            Hooks.ReportLogs("Entered CurrentAddress");
             helper.EnterGivenText(PermanentAddress, PermAddress);
+            Hooks.ReportLogs("Entered PermanentAddress");
             helper.clickbutton(Adclose);
             BrowserMethods.Scroll();
             helper.clickbutton(SubmitButton);
+            Hooks.ReportLogs("Clicked submit button");
         }
         public void VerifyRegisteredSection()
         {
@@ -69,15 +71,20 @@ namespace EPAMTraining.POM
 
         public void VerifySubmittedData(string name, string email, string currAddress, string PermAddress)
         {
-            helper.VerifyContainsText(Disp_UserName, name);
-            helper.VerifyContainsText(Disp_UserEmail, email);
-            helper.VerifyContainsText(Disp_CurrentAddress, currAddress);
-            helper.VerifyContainsText(Disp_PermanentAddress, PermAddress);
+            helper.VerifyContainsText(Disp_UserDetails("name"), name);
+            Hooks.ReportLogs("Verified Username displayed in the screen");
+            helper.VerifyContainsText(Disp_UserDetails("email"), email);
+            Hooks.ReportLogs("Verified Email id displayed in the screen");
+            helper.VerifyContainsText(Disp_UserDetails("currentAddress"), currAddress);
+            Hooks.ReportLogs("Verified current address displayed in the screen");
+            helper.VerifyContainsText(Disp_UserDetails("permanentAddress"), PermAddress);
+            Hooks.ReportLogs("Verified permanent address displayed in the screen");
         }
 
         public void CloseAds()
         {
             helper.clickbutton(Adclose);
+            Hooks.ReportLogs("Closed Ads window successfully");
         }
 
         public void CaptureAllLinks()

@@ -11,6 +11,8 @@ namespace EPAMTraining
     public class BrowserMethods
     {
         public static IWebDriver Driver;
+
+        Hooks Hooks = new Hooks();
         public BrowserMethods(IWebDriver driver)
         {
             Driver = driver;
@@ -18,6 +20,7 @@ namespace EPAMTraining
         public IWebDriver NavigateToGivenURL(string url)
         {
             Driver.Navigate().GoToUrl(url);
+            Hooks.ReportLogs("Launched URl successfully.");
             return Driver;
         }
         public static void Scroll()
@@ -34,7 +37,6 @@ namespace EPAMTraining
         public void roughmethod()
         {
             WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(30));
-
         }
 
         public string Gettimestamp(DateTime value)
@@ -56,10 +58,8 @@ namespace EPAMTraining
         public static void waitconditionbyxpath(string elemvalue)
         {
             WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(20));
-
             Func<IWebDriver, IWebElement> waitforelement = new Func<IWebDriver, IWebElement>((IWebDriver web) =>
             {
-
                 IWebElement element = web.FindElement(By.XPath(elemvalue));
                 if (element.Enabled)
                 {

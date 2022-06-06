@@ -17,6 +17,7 @@ namespace Exercise_Epam.POM
         {
             this.driver = driver;
         }
+        Hooks Hooks = new Hooks();
 
         Helper helper = new Helper();
         private IWebElement Widget => driver.FindElement(By.XPath("//*[text() ='Widgets']"));
@@ -29,8 +30,8 @@ namespace Exercise_Epam.POM
         {
             BrowserMethods.ActionMoveToElement(Interactions);
             helper.clickbutton(Widget);
-            Thread.Sleep(3000);
             helper.clickbutton(SelMenu);
+            Hooks.ReportLogs("Navigated to Select Menu screen");
         }
 
         public void waitcondition()
@@ -42,7 +43,9 @@ namespace Exercise_Epam.POM
         public void SelectValueFromSelectMenu()
         {
             helper.selectDropDown(StandardDropDown, 3);
+            Hooks.ReportLogs("Selected value with index 3");
             helper.selectDropDown(SelDropDownOld, "sBlack");
+            Hooks.ReportLogs("Selected value with value Black");
         }
     }
 }

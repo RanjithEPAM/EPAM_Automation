@@ -11,7 +11,6 @@ namespace EPAMTraining.Utility
     {
         protected IWebDriver driver;
         protected abstract IWebDriver createdriver();
-
         public void quitdriver()
         {
             if(driver != null)
