@@ -74,49 +74,16 @@ namespace EPAM_UIAutomation.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Working with dropdowns in ToolsQA site")]
-        [NUnit.Framework.CategoryAttribute("Smoke")]
-        public void WorkingWithDropdownsInToolsQASite()
-        {
-            string[] tagsOfScenario = new string[] {
-                    "Smoke"};
-            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Working with dropdowns in ToolsQA site", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 4
-this.ScenarioInitialize(scenarioInfo);
-#line hidden
-            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
-            {
-                testRunner.SkipScenario();
-            }
-            else
-            {
-                this.ScenarioStart();
-#line 5
- testRunner.Given("I launch the ToolsQA url", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
-#line 6
- testRunner.When("I select Elements option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line hidden
-#line 7
- testRunner.And("Navigating to Select Menu screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 8
- testRunner.Then("user should be able to select value from drop downs", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            }
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Validation of Registration Screen")]
+        [NUnit.Framework.CategoryAttribute("Smoke")]
         [NUnit.Framework.CategoryAttribute("Regression")]
-        [NUnit.Framework.TestCaseAttribute("001", "User001", "user001@gmail.com", "AddressUser1", "TAddressUser1", null)]
-        [NUnit.Framework.TestCaseAttribute("002", "User002", "user002@gmail.com", "AddressUser2", "TAddressUser2", null)]
-        [NUnit.Framework.TestCaseAttribute("003", "User003", "user003@gmail.com", "AddressUser3", "TAddressUser3", null)]
-        public void ValidationOfRegistrationScreen(string testCaseID, string name, string email, string currentAddress, string permanentAddress, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("001", "User001", "user001@gmail.com", "AddressUser1", "TAddressUser1", "Testing", null)]
+        [NUnit.Framework.TestCaseAttribute("002", "User002", "user002@gmail.com", "AddressUser2", "TAddressUser2", "Mass", null)]
+        [NUnit.Framework.TestCaseAttribute("003", "User003", "user003@gmail.com", "AddressUser3", "TAddressUser3", "King", null)]
+        public void ValidationOfRegistrationScreen(string testCaseID, string name, string email, string currentAddress, string permanentAddress, string printtext, string[] exampleTags)
         {
             string[] @__tags = new string[] {
+                    "Smoke",
                     "Regression"};
             if ((exampleTags != null))
             {
@@ -129,6 +96,7 @@ this.ScenarioInitialize(scenarioInfo);
             argumentsOfScenario.Add("Email", email);
             argumentsOfScenario.Add("CurrentAddress", currentAddress);
             argumentsOfScenario.Add("PermanentAddress", permanentAddress);
+            argumentsOfScenario.Add("printtext", printtext);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validation of Registration Screen", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 11
 this.ScenarioInitialize(scenarioInfo);

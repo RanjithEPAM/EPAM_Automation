@@ -29,7 +29,7 @@ namespace Exercise_Epam
             _scenarioContext = scenarioContext;
             this.driver = Hooks.driver;
         }
-
+        
         [Given(@"I launch the ToolsQA url")]
         public void GivenILaunchTheToolsQAUrl()
         {
@@ -89,6 +89,11 @@ namespace Exercise_Epam
             _scenarioContext["CurrentAddress"] = inputdata.CurrentAddress;
             _scenarioContext["PermanentAddress"] = inputdata.PermanentAddress;
         }
+
+       
+
+
+
 
         [Then(@"the submitted details should be displayed in the same screen")]
         public void ThenTheSubmittedDetailsShouldBeDisplayedInTheSameScreen()

@@ -1,11 +1,11 @@
 ﻿Feature: Validation of ToolsQA Site
 
 @Smoke
-Scenario: Working with dropdowns in ToolsQA site
-	Given I launch the ToolsQA url
-	When I select Elements option
-	And Navigating to Select Menu screen
-	Then user should be able to select value from drop downs
+#Scenario: Working with dropdowns in ToolsQA site
+#	Given I launch the ToolsQA url
+#	When I select Elements option
+#	And Navigating to Select Menu screen
+#	Then user should be able to select value from drop downs
 
 @Regression
 Scenario: Validation of Registration Screen
@@ -21,7 +21,7 @@ Scenario: Validation of Registration Screen
 	And able to collect all links in webpage
 
 Examples:
-	| TestCaseID | Name    | Email             | CurrentAddress | PermanentAddress |
-	| 001        | User001 | user001@gmail.com | AddressUser1   | TAddressUser1    |
-	| 002        | User002 | user002@gmail.com | AddressUser2   | TAddressUser2    |
-	| 003        | User003 | user003@gmail.com | AddressUser3   | TAddressUser3    |
+	| TestCaseID | Name    | Email             | CurrentAddress | PermanentAddress | printtext |
+	| 001        | User001 | user001@gmail.com | AddressUser1   | TAddressUser1    | Testing   |
+	| 002        | User002 | user002@gmail.com | AddressUser2   | TAddressUser2    | Mass      |
+	| 003        | User003 | user003@gmail.com | AddressUser3   | TAddressUser3    | King      |

@@ -3,5 +3,5 @@
   "POST": "https://reqres.in/api/users",
   "PUT": "https://reqres.in/api/users",
   "DELETE": "https://reqres.in/api/users/2",
-  "ReportPath": "C:\\Users\\Ranjith_Paramasivam\\source\\repos\\EPAM_Automation\\EPAM_UIAutomation\\EPAM_UIAutomation\\Result\\Report.html"
+  "ReportPath": "C:\\Users\\Ranjith_Paramasivam\\Documents\\Learning\\EPAM\\EPAM_UIAutomation\\Result\\Result.html"
 }

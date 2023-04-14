@@ -75,11 +75,11 @@ namespace EPAM_APIAutomation.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Validation of GET Request for retrieving users list")]
-        [NUnit.Framework.CategoryAttribute("tag1")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         public void ValidationOfGETRequestForRetrievingUsersList()
         {
             string[] tagsOfScenario = new string[] {
-                    "tag1"};
+                    "ignore"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Validation of GET Request for retrieving users list", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 6

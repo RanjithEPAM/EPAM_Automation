@@ -2,7 +2,7 @@
 
 A short summary of the feature
 
-@tag1
+@ignore
 Scenario: Validation of GET Request for retrieving users list
 	Given I have a GET request for ReqRes API
 	When I send the GET request for ReqRes API

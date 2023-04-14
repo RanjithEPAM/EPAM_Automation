@@ -105,7 +105,7 @@ namespace EPAMTraining
 
         public static void LoadJson()
         {
-            using (StreamReader r = new StreamReader(@"C:\Users\Ranjith_Paramasivam\source\repos\EPAM_Automation\EPAM_UIAutomation\EPAM_UIAutomation\Utility\Config.json"))
+            using (StreamReader r = new StreamReader(@"C:\Users\Ranjith_Paramasivam\Documents\Learning\EPAM\EPAM_UIAutomation\Utility\Config.json"))
             {
                 string json = r.ReadToEnd();
                 Item items = JsonConvert.DeserializeObject<Item>(json);
