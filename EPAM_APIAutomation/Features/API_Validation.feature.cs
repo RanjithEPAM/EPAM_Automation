@@ -110,11 +110,18 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Validation of POST Request for creating user")]
+        [NUnit.Framework.CategoryAttribute("Smoke")]
         [NUnit.Framework.TestCaseAttribute("101", "Kevin", "Teacher", null)]
         [NUnit.Framework.TestCaseAttribute("102", "Chris", "Dentist", null)]
         public void ValidationOfPOSTRequestForCreatingUser(string testcaseID, string name, string job, string[] exampleTags)
         {
-            string[] tagsOfScenario = exampleTags;
+            string[] @__tags = new string[] {
+                    "Smoke"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("TestcaseID", testcaseID);
             argumentsOfScenario.Add("Name", name);
@@ -154,11 +161,18 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Validation of PUT Request for updating user details")]
+        [NUnit.Framework.CategoryAttribute("Smoke")]
         [NUnit.Framework.TestCaseAttribute("101", "Kevin", "Teacher", null)]
         [NUnit.Framework.TestCaseAttribute("102", "Chris", "Dentist", null)]
         public void ValidationOfPUTRequestForUpdatingUserDetails(string testcaseID, string name, string job, string[] exampleTags)
         {
-            string[] tagsOfScenario = exampleTags;
+            string[] @__tags = new string[] {
+                    "Smoke"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("TestcaseID", testcaseID);
             argumentsOfScenario.Add("Name", name);
@@ -198,11 +212,18 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Validation of Delete Request for deleting user details")]
+        [NUnit.Framework.CategoryAttribute("Smoke")]
         [NUnit.Framework.TestCaseAttribute("101", "Kevin", "Teacher", null)]
         [NUnit.Framework.TestCaseAttribute("102", "Chris", "Dentist", null)]
         public void ValidationOfDeleteRequestForDeletingUserDetails(string testcaseID, string name, string job, string[] exampleTags)
         {
-            string[] tagsOfScenario = exampleTags;
+            string[] @__tags = new string[] {
+                    "Smoke"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("TestcaseID", testcaseID);
             argumentsOfScenario.Add("Name", name);
